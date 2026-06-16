@@ -1,1 +1,58 @@
 
+Control Statements – Theory
+
+Control statements determine the flow of execution in a program.
+
+Types of Control Statements
+1. Selection (Decision-Making) Statements
+
+Used to choose between alternatives.
+
+if
+if-else
+else-if ladder
+nested if
+switch-case (C, C++, Java)
+
+Example:
+
+if (x > 0)
+{
+    printf("Positive");
+}
+else
+{
+    printf("Negative");
+}
+
+2. Iteration (Looping) Statements
+
+Used to execute a block repeatedly.
+
+for
+while
+do-while
+
+Example:
+
+for(int i=1; i<=5; i++)
+{
+    printf("%d ", i);
+}
+
+3. Jump Statements
+
+Used to transfer control from one part of a program to another.
+
+break
+continue
+goto
+return
+
+Example:
+
+for(int i=1; i<=10; i++)
+{
+    if(i==5)
+        break;
+}
