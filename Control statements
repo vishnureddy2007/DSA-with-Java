@@ -1,57 +1,269 @@
- Control Statements – Theory
+# Java Control Statements
 
-Control statements determine the flow of execution in a program.
+## Overview
 
-Types of Control Statements
-1. Selection (Decision-Making) Statements
+Control statements are one of the most important concepts in Java because they determine how a program executes. They help us make decisions, repeat tasks, and control the flow of execution based on different conditions.
 
-Used to choose between alternatives.
+In real-world applications, control statements are used everywhere—from validating user input and processing data to implementing business logic and handling different scenarios.
 
-if
-if-else
-else-if ladder
-nested if
-switch-case (C, C++, Java)
+Java control statements are broadly classified into three categories:
 
-Example:
+* Selection (Decision-Making) Statements
+* Iteration (Looping) Statements
+* Jump Statements
 
-if (x > 0)
-{
-    printf("Positive");
+This document covers the core concepts, syntax, examples, interview questions, and frequently asked differences related to Java control statements.
+
+---
+
+## Selection (Decision-Making) Statements
+
+Selection statements allow a program to choose different execution paths based on conditions.
+
+### if Statement
+
+The `if` statement executes a block of code only when the specified condition evaluates to `true`.
+
+```java
+int age = 18;
+
+if(age >= 18) {
+    System.out.println("Eligible to vote");
 }
-else
-{
-    printf("Negative");
+```
+
+### if-else Statement
+
+When there are two possible outcomes, `if-else` can be used.
+
+```java
+int age = 16;
+
+if(age >= 18) {
+    System.out.println("Eligible");
+} else {
+    System.out.println("Not Eligible");
 }
+```
 
-2. Iteration (Looping) Statements
+### if-else-if Ladder
 
-Used to execute a block repeatedly.
+Used when multiple conditions need to be evaluated sequentially.
 
-for
-while
-do-while
+```java
+int marks = 85;
 
-Example:
-
-for(int i=1; i<=5; i++)
-{
-    printf("%d ", i);
+if(marks >= 90) {
+    System.out.println("Grade A");
 }
+else if(marks >= 75) {
+    System.out.println("Grade B");
+}
+else {
+    System.out.println("Grade C");
+}
+```
 
-3. Jump Statements
+### Nested if
 
-Used to transfer control from one part of a program to another.
+A nested `if` is simply an `if` statement inside another `if` statement.
 
-break
-continue
-goto
-return
+```java
+int age = 20;
+boolean hasLicense = true;
 
-Example:
+if(age >= 18) {
+    if(hasLicense) {
+        System.out.println("Can drive");
+    }
+}
+```
 
-for(int i=1; i<=10; i++)
-{
-    if(i==5)
+### switch Statement
+
+The `switch` statement provides a cleaner alternative when multiple cases depend on the same value.
+
+```java
+int day = 3;
+
+switch(day) {
+    case 1:
+        System.out.println("Monday");
         break;
+
+    case 2:
+        System.out.println("Tuesday");
+        break;
+
+    case 3:
+        System.out.println("Wednesday");
+        break;
+
+    default:
+        System.out.println("Invalid Day");
 }
+```
+
+Java 14 introduced switch expressions, which are more concise and eliminate the need for explicit `break` statements.
+
+```java
+int day = 2;
+
+String result = switch(day) {
+    case 1 -> "Monday";
+    case 2 -> "Tuesday";
+    default -> "Invalid";
+};
+
+System.out.println(result);
+```
+
+---
+
+## Iteration (Looping) Statements
+
+Loops are used when a block of code needs to be executed repeatedly.
+
+### for Loop
+
+Best suited when the number of iterations is known in advance.
+
+```java
+for(int i = 1; i <= 5; i++) {
+    System.out.println(i);
+}
+```
+
+### while Loop
+
+Useful when the number of iterations is not known beforehand.
+
+```java
+int i = 1;
+
+while(i <= 5) {
+    System.out.println(i);
+    i++;
+}
+```
+
+### do-while Loop
+
+Unlike other loops, a `do-while` loop always executes at least once because the condition is checked after execution.
+
+```java
+int i = 1;
+
+do {
+    System.out.println(i);
+    i++;
+} while(i <= 5);
+```
+
+### Enhanced for Loop
+
+Commonly used for traversing arrays and collections.
+
+```java
+int arr[] = {10, 20, 30, 40};
+
+for(int num : arr) {
+    System.out.println(num);
+}
+```
+
+---
+
+## Jump Statements
+
+Jump statements alter the normal flow of execution.
+
+### break
+
+Used to immediately terminate a loop or switch statement.
+
+```java
+for(int i = 1; i <= 10; i++) {
+
+    if(i == 5)
+        break;
+
+    System.out.println(i);
+}
+```
+
+### continue
+
+Skips the current iteration and proceeds with the next iteration.
+
+```java
+for(int i = 1; i <= 5; i++) {
+
+    if(i == 3)
+        continue;
+
+    System.out.println(i);
+}
+```
+
+### return
+
+Terminates a method and optionally returns a value.
+
+```java
+public static int add(int a, int b) {
+    return a + b;
+}
+```
+
+---
+
+## Key Interview Points
+
+Some frequently asked interview questions related to control statements include:
+
+* Difference between `while` and `do-while`
+* Difference between `break` and `continue`
+* Difference between `if-else` and `switch`
+* What is switch fall-through?
+* Which loop executes at least once?
+* Can `switch` work with `String`?
+* Can `switch` use `float` or `double`?
+* What is a labeled break?
+* What is a labeled continue?
+* When should we use a `for` loop instead of a `while` loop?
+
+Understanding these concepts thoroughly will help in coding rounds as well as technical interviews.
+
+---
+
+## Quick Revision
+
+### Decision Statements
+
+* if
+* if-else
+* if-else-if
+* nested if
+* switch
+
+### Loop Statements
+
+* for
+* while
+* do-while
+* enhanced for
+
+### Jump Statements
+
+* break
+* continue
+* return
+
+---
+
+## Conclusion
+
+Control statements form the foundation of program logic in Java. Whether it is making decisions, executing repetitive tasks, or controlling program flow, these statements are essential for building efficient and maintainable applications.
+
+A strong understanding of control statements not only improves coding skills but also helps significantly in Java interviews, competitive programming, and real-world software development.
