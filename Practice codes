@@ -120,4 +120,122 @@ STRING BULIT-IN FUMCTIONS:
 -indexof(str)
 -concat(str)
 -toLowerCase()
--
+1. Check Whether Two Numbers Have the Same Sign Using XOR
+import java.util.*;
+
+public class Main {
+    public static void main(String[] args) {
+        Scanner s = new Scanner(System.in);
+
+        int a = s.nextInt();
+        int b = s.nextInt();
+
+        if ((a ^ b) >= 0)
+            System.out.println("Same Sign");
+        else
+            System.out.println("Different Sign");
+    }
+}
+2. Find All Neon Numbers in a Given Range
+import java.util.*;
+
+public class Main {
+    public static void main(String[] args) {
+        Scanner s = new Scanner(System.in);
+
+        int n = s.nextInt();
+
+        for (int i = 0; i <= n; i++) {
+            int sq = i * i;
+            int sum = 0;
+
+            while (sq > 0) {
+                sum += sq % 10;
+                sq /= 10;
+            }
+
+            if (sum == i)
+                System.out.println(i);
+        }
+    }
+}
+3. Hollow Rectangle Pattern
+import java.util.*;
+
+public class Main {
+    public static void main(String[] args) {
+        Scanner s = new Scanner(System.in);
+
+        int rows = s.nextInt();
+        int cols = s.nextInt();
+
+        for (int i = 1; i <= rows; i++) {
+            for (int j = 1; j <= cols; j++) {
+
+                if (i == 1 || i == rows || j == 1 || j == cols)
+                    System.out.print("*");
+                else
+                    System.out.print(" ");
+            }
+            System.out.println();
+        }
+    }
+}
+4. Count Even and Odd Digits in a Number
+import java.util.*;
+
+public class Main {
+    public static void main(String[] args) {
+        Scanner s = new Scanner(System.in);
+
+        int n = s.nextInt();
+
+        int even = 0;
+        int odd = 0;
+
+        while (n > 0) {
+            int digit = n % 10;
+
+            if (digit % 2 == 0)
+                even++;
+            else
+                odd++;
+
+            n /= 10;
+        }
+
+        System.out.println("Even Digits: " + even);
+        System.out.println("Odd Digits: " + odd);
+    }
+}
+5. String Operations Using Built-in Functions
+import java.util.*;
+
+public class Main {
+    public static void main(String[] args) {
+        Scanner s = new Scanner(System.in);
+
+        String str = s.nextLine();
+        char ch = s.next().charAt(0);
+
+        System.out.println("Length: " + str.length());
+        System.out.println("First Character: " + str.charAt(0));
+        System.out.println("Uppercase: " + str.toUpperCase());
+        System.out.println("Lowercase: " + str.toLowerCase());
+        System.out.println("Index of " + ch + ": " + str.indexOf(ch));
+    }
+}
+6. Reverse a String Without Using Reverse Function
+import java.util.*;
+
+public class Main {
+    public static void main(String[] args) {
+        Scanner s = new Scanner(System.in);
+
+        String str = s.nextLine();
+
+        for (int i = str.length() - 1; i >= 0; i--) {
+            System.out.print(str.charAt(i));
+        }
+    }
+}
