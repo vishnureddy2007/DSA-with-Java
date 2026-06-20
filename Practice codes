@@ -1,0 +1,123 @@
+BOOLEAN USING XOR:
+import java.util.*;
+
+public class Main {
+    public static void main(String[] args) {
+      Scanner s=new Scanner(System.in);
+      int a=s.nextInt();
+      int b=s.nextInt();
+      boolean opp=((a^b)<0);
+      System.out.println(opp);
+    }
+}
+
+EVEN AND ODD:
+import java.util.*;
+
+public class Main {
+    public static void main(String[] args) {
+      Scanner s=new Scanner(System.in);
+      int a=s.nextInt();
+      for(int i=1;i<=a;i++){
+        if(i%2==0)
+         System.out.println(i+" is even");
+        else
+         System.out.println(i+" is odd");
+      }
+    }
+}
+NEON NUMBER:
+import java.util.*;
+
+public class Main {
+    public static void main(String[] args) {
+      Scanner s=new Scanner(System.in);
+      int n=s.nextInt();
+      int sq=n*n;
+      int sum=0;
+      while(sq>0){
+        int rem=sq%10;
+        sum=sum+rem;
+        sq=sq/10;
+      }
+      if(sum==n){
+      System.out.println("neon num ");
+      }
+      else{
+        System.out.println("not neon num ");
+      }
+    }
+}
+
+HOLLOW SQUARE:
+import java.util.*;
+
+public class Main {
+    public static void main(String[] args) {
+      Scanner s=new Scanner(System.in);
+      int n=s.nextInt();
+      for(int i=1;i<=n;i++){
+         for(int j=1;j<=n;j++){
+          if(i==1||j==1||i==n||j==n){
+          System.out.print("*");
+          }
+          else{
+            System.out.print(" ");
+          }
+         }
+         System.out.println();
+      }
+    }
+}
+
+DIAMOND PATTERN:
+import java.util.Scanner;
+
+public class DiamondPattern {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        
+        System.out.print("Enter the number of rows for the top half: ");
+        int rows = scanner.nextInt();
+        
+        // 1. Print the top half (Upright Pyramid)
+        for (int i = 1; i <= rows; i++) {
+            // Print leading spaces
+            for (int j = 1; j <= rows - i; j++) {
+                System.out.print(" ");
+            }
+            // Print stars
+            for (int j = 1; j <= (2 * i - 1); j++) {
+                System.out.print("*");
+            }
+            // Move to the next line
+            System.out.println();
+        }
+        
+        // 2. Print the bottom half (Inverted Pyramid)
+        for (int i = rows - 1; i >= 1; i--) {
+            // Print leading spaces
+            for (int j = 1; j <= rows - i; j++) {
+                System.out.print(" ");
+            }
+            // Print stars
+            for (int j = 1; j <= (2 * i - 1); j++) {
+                System.out.print("*");
+            }
+            // Move to the next line
+            System.out.println();
+        }
+        
+        scanner.close();
+    }
+}
+
+
+STRING BULIT-IN FUMCTIONS:
+
+-length()
+-charAt(index)
+-indexof(str)
+-concat(str)
+-toLowerCase()
+-
